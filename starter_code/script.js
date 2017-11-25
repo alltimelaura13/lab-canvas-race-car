@@ -4,16 +4,15 @@ window.onload = function() {
   };
 
 
+
+//coche:
+
+
   function startGame() {
-    var img = new image();
-    img.src = "images/car.png";
 
-    img.onload = function() {
-      ctx.drawImage(img, 200, 200, 100, 100);
-    }
-    this.button.onclick = function() {
+    var canvas = new Canvas("canvas");
+    canvas.draw();
 
-    }
   }
 };
 
@@ -21,16 +20,18 @@ window.onload = function() {
 function Canvas(id) {
   var canvas = document.getElementById('canvas');
   canvas.width = 500;
-  canvas.height = 800;
+  canvas.height = 650;
   this.ctx = canvas.getContext("2d");
-
   var img = new Image();
-  img.src = "./images/car.png";
+  img.src = "images/car.png";
 
   img.onload = (function() {
-    this.ctx.drawImage(img, 179, 425, 50, 100);
+    this.ctx.drawImage(img, 225, 540, 50, 100);
   }).bind(this);
+
 }
+
+//carretera:
 
 Canvas.prototype.drawRect = function(x, y, width, height, color) {
   this.ctx.beginPath();
@@ -73,7 +74,3 @@ Canvas.prototype.draw = function() {
   this.ctx.save();
 
 }
-
-
-var canvas = new Canvas("canvas");
-canvas.draw();
